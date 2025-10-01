@@ -1,4 +1,4 @@
-
+// ***************************************************************************************************************************************
 Class C1
   Public:
   //Acessivel a qualquer parte do codigo
@@ -20,4 +20,33 @@ void mai()
   a.ttr1 = 50; // nao e possivel fazer isso
   
 }
+
+/*
+Principio do menor privilegio: 
+  Sempre que possivel, restinja o acesso aos dados e funcoes. Pois, quanto mais restrito o acesso for, menor a possibilidade do usuario entrar com dados inconsistentes 
+  que farao o codigo apresentar resultados inconsistentes.
+
+*/
+
+//***************************************************************************************************************************************
+
+/*Construtores e Destrutores
+
+Funcoes que sao automaticamente invocadas,
+
+  Construtor e invocado quando se cria o objeto
+  Destrutor e invocado quando se destroi esse objeto
+
+Exemplo: abertura de um arquivo com um construtor e fechamento do arquivo com um destrutor
+
+RAII: Resource Acquisition Is Initialization
+
+
+
+*/
+
+
+
+
+
 
