@@ -41,8 +41,9 @@ Exemplo: abertura de um arquivo com um construtor e fechamento do arquivo com um
 
 RAII: Resource Acquisition Is Initialization
 
+Principio da separacao de responsabilidades:
 
-
+Progaramacao de magic numbers: utilizacao de macros (#define BOTAO1) para melhorar a legibilidade do codigo 
 */
 
 
