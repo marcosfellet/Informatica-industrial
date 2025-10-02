@@ -1,7 +1,24 @@
 #include "banco.h"
 #include <iostream>
 
+
 using namespace std;
+
+void confere_flags(int flag)
+{
+    if(flag == ERRO)
+    {
+        cout<<"Senha invalida">>endl;
+    }
+    else if(flag == INVALIDO)
+    {
+        cout<<"Valor invalido">>endl;
+    }
+    else if()
+    {
+        
+    }
+}
 
 Banco::Banco() //O construtor criara 4 contas
 {
@@ -64,16 +81,54 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                 case 1:
                     cout << "Digite o valor: ";
                     cin>>valor;
-                    contaCliente->saque(senhain,valor);
-                    break;
+                    if(contaCliente->saque(senhain,valor) == 1)
+                    {
+                        contaCliente->saque(senhain,valor)
+                        cout<<"Saque de R$"<<contaCliente->saque(senhain,valor)r<<" realizado com sucesso."<<endl;
+                        break;   
+                    }
+                    else if(contaCliente->saque(senhain,valor) == 0)
+                    {
+                        cout<<"Senha invalida">>endl;
+                        //op = 1;
+                        continue;
+                    }
+                    else
+                    {
+                        cout<<"Saldo insuficiente"<<endl;
+                       // op = 1;
+                        continue;
+                    }
                 case 2:
                     cout << "Digite o valor: ";
                     cin>>valor;
-                    contaCliente->deposito(valor);
+                    if(contaCliente->deposito(valor) == 1)
+                    {
+                        cout<<"Deposito de R$ "<<contaCliente->deposito(valor);
+                        cout<<"efetuado">>endl;
+                        break;
+                    }
+                    else
+                    {
+                        cout<<"Valor invalido">>endl;
+                        //op = 2
+                        continue;
+                    }
+                    
                     break;
                 case 3:
-                    cout << "Saldo: R$ "<<contaCliente->getSaldo(senhain)<<endl;
-                    break;
+                    if()
+                    {
+                        cout << "Saldo: R$ "<<contaCliente->getSaldo(senhain)<<endl;
+                        break;
+                    }
+                    else
+                    {
+                    
+                        
+                    }
+                
+                }
                 case 4:
                     atendimento = false;
                     break;
