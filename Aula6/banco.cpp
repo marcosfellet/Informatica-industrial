@@ -14,7 +14,7 @@ void confere_flags(int flag)
     {
         cout<<"Valor invalido">>endl;
     }
-    else if()
+    else if(flag == )
     {
         
     }
