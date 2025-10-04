@@ -1,10 +1,9 @@
 #include "banco.h"
 #include <iostream>
 
-
 using namespace std;
 
-/*void confere_flags(int flag)
+void confere_flags(char flag)
 {
     if(flag == ERRO)
     {
@@ -14,11 +13,8 @@ using namespace std;
     {
         cout<<"Valor invalido">>endl;
     }
-    else if(flag == Valido)
-    {
-        
-    }
-}*/
+   
+}
 
 Banco::Banco() //O construtor criara 4 contas
 {
@@ -50,11 +46,15 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
     Conta *contaCliente;
     int numC = 0;
     int senhain;
+    unsigned char flag = 100; // variavel que verifica quais mensagens irao aparecer no 
     bool atendimento = true;
 
     cout << "Bem vindo ao sistema de atendimento do banco" << endl;
-    cout << "Digite o numero da sua conta: ";
+    cout<< "Caso deseje criar uma conta, digite '101'" >> endl;
+    cout << "Caso deseje acessar a sua conta, digite seu numero: ";
     cin >> numC;
+    
+    
 
     contaCliente = this->buscaConta(numC); //Chama o Metodo buscaConta() do banco para achar o objeto conta que possui o numero numC
 
@@ -89,8 +89,10 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                     }
                     else if(contaCliente->saque(senhain,valor) == 0)
                     {
-                        cout<<"Senha invalida">>endl;
-                        //op = 1;
+                        flag = ERRO;
+                        confere_flags(flag);
+                        flag = 100;
+                        //cout<<"Senha invalida">>endl;
                         continue;
                     }
                     else
@@ -137,6 +139,7 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
         }
         else
         {
+            confere_flags
             cout << "Senha invalida" << endl;
         }
     }
