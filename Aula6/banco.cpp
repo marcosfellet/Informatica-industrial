@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void confere_flags(int flag)
+/*void confere_flags(int flag)
 {
     if(flag == ERRO)
     {
@@ -14,11 +14,11 @@ void confere_flags(int flag)
     {
         cout<<"Valor invalido">>endl;
     }
-    else if(flag == )
+    else if(flag == Valido)
     {
         
     }
-}
+}*/
 
 Banco::Banco() //O construtor criara 4 contas
 {
