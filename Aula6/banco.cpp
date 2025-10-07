@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+/*
 void confere_flags(char flag)
 {
     if(flag == ERRO)
@@ -14,7 +14,7 @@ void confere_flags(char flag)
         cout<<"Valor invalido">>endl;
     }
    
-}
+}*/
 
 Banco::Banco() //O construtor criara 4 contas
 {
@@ -23,7 +23,8 @@ Banco::Banco() //O construtor criara 4 contas
     this->contas[2] = {7890, 3, "Maria", "Corrente", 1000};
     this->contas[3] = {8956, 4, "Madalena", "Poupanca", 2000};
 }
-
+// como o construtor cria 4 contas, cria-se uma variavel para ser o indice a partir desse valor:
+unsigned char index = 4;
 Banco::~Banco()
 {
 }
@@ -41,19 +42,27 @@ Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o
     return nullptr;
 }
 
+Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas contas
+{
+    
+}
+
 void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na main)
 {
     Conta *contaCliente;
     int numC = 0;
     int senhain;
-    unsigned char flag = 100; // variavel que verifica quais mensagens irao aparecer no 
+    //unsigned char flag = 100; // variavel que verifica quais mensagens irao aparecer no 
     bool atendimento = true;
 
     cout << "Bem vindo ao sistema de atendimento do banco" << endl;
     cout<< "Caso deseje criar uma conta, digite '101'" >> endl;
     cout << "Caso deseje acessar a sua conta, digite seu numero: ";
     cin >> numC;
-    
+    if(numC == 101)
+    {
+            
+    }
     
 
     contaCliente = this->buscaConta(numC); //Chama o Metodo buscaConta() do banco para achar o objeto conta que possui o numero numC
@@ -139,7 +148,7 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
         }
         else
         {
-            confere_flags
+            //confere_flags
             cout << "Senha invalida" << endl;
         }
     }
