@@ -8,7 +8,7 @@ private:
     int minuto;
     int segundo;
 public:
-    Horario(int = 12, int = 0, int = 0);
+    Horario(int = 12, int = 0, int = 0); // construtor com parametros-padrao => 4 formas de estanciar os objetos
 
     // funções get
     int getHora() const;
