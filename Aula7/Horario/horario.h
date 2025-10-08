@@ -11,7 +11,7 @@ public:
     Horario(int = 12, int = 0, int = 0); // construtor com parametros-padrao => 4 formas de estanciar os objetos
 
     // funções get
-    int getHora() const;
+    int getHora() const; // const garante que as funcoes ge nao alterem as variaveis, mas apenas, leem-nas 
     int getMinuto() const;
     int getSegundo() const;
 
