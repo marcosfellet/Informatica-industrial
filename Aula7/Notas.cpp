@@ -9,7 +9,22 @@ int main()
   foll(4); // funcao foll roda com a = 4 e b = 1 (padrao) 
 }
 
-/*****************************************************************************************************************************/
+/***************************************************Modificadores***************************************************************/
+// Modificadores mudam a forma na qual as variaveis sao trabalhadas
+const // torna a variavel para apenas leitura
+static 
+  // com variaveis locais:
+  void foo()
+  {
+    int cont = 0;
+    cout << ++cont;
+  }
 
+  int main()
+  {
+    foo();
+    foo();
+    foo();
+  }
 
 
