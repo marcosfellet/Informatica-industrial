@@ -45,7 +45,38 @@ static
     C c2;
     C::attr1 = 10; // this->attr1 = 10; nao funciona, pois attr1 nao e de variavel, mas sim da classe    
   }
-// 
+/**********************************************************Memorias**********************************************************************
+Stack: tamanho definido durante a compilacao. 
+       Memoria alocada e desalocada a automaticamente.
+       Uso excessivo gera alto gasto de memoria RAM
 
-  
+variaveis armazenadas: a, var, vet, p
+
+Heap: alocamento dinamico e nao ordenado, sob demanda
+      comandos: new e delete
+
+variaveis armazenadas: (espaco pra um inteiro) => desalocado apos o uso do delete
+
+Data e bss: para variaveis globais ou estaticas
+*****************************************************************************************************************************************/
+void foo()
+{
+  int var;
+  int* p2 = new int;
+  *p2 = 10;
+}
+
+int main()
+{
+  int a = 10;
+  int vet[100];
+  int* p = new int; // guarda espaco suficiente para para um inteiro na Heap, necessitando do uso de ponteiro
+  *p = 10;
+  delete p; // desaloca o endereco da Heap
+  for(int i = 0; i < 10; i++)
+    {
+      foo();
+    }
+  // for chama a funcao foo 100 vezes, cada execucao aloca espaco na memoria Heap, mas como nao ha o comando delete, ocorre o esgotamento da memoria Heap
+}
 
