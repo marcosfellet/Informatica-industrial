@@ -44,7 +44,18 @@ Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o
 
 Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas contas
 {
-    
+    if(index <= 100)
+    {
+        Banco::Banco()
+        {
+            this->contas[index] = Conta(1234, 1, "Joao", "Corrente", 300);
+        }
+    {
+    index++;
+    else
+        {
+            cout <<"Numero maximo de contas atinjido">> endl;
+        }
 }
 
 void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na main)
