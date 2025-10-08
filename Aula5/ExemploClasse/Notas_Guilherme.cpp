@@ -39,7 +39,7 @@ Funcoes que sao automaticamente invocadas,
 
 Exemplo: abertura de um arquivo com um construtor e fechamento do arquivo com um destrutor
 
-RAII: Resource Acquisition Is Initialization
+RAII: Resource Acquisition Is Initialization => construtres e destrutores como "alocadores" e "desalocadores", pois eles se dierenciam d classes por invocado automaticamente
 
 Principio da separacao de responsabilidades:
 
