@@ -27,7 +27,7 @@ static
       foo(); // imprime 2
       foo(); // imprime 3
     }
-// com objetos:
+// com objetos e metodos:
   class C
   {
     private:
