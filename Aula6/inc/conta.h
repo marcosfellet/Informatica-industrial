@@ -21,6 +21,7 @@ public:
     void setSenha(int novaSenha);
     void deposito(double valor);
     void saque(int senha, double valor);
+    void transacao(double valor, int id, int id);
     bool validaSenha(int senha);
 
 };
