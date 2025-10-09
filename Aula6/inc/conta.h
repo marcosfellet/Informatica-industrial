@@ -1,5 +1,5 @@
 #define SENHA_CORRETA 1
-#define ERRO 0 // utilizado para senha invalida
+#define ERRO -2 // utilizado para senha invalida
 #define VALIDO 2
 #define INVALIDO -1
 
