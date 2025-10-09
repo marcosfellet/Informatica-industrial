@@ -126,6 +126,21 @@ void Conta::saque(int senha, double valor)
     
 }
 
+int Conta::transacao(double &valor, Conta* c1, Conta* c2, int senha)
+{
+    if(c1->validaSenha(senha))
+    { 
+        this->c1.saque(valor);   
+        this->c2.deposito(valor);
+        return VALIDO;
+
+    }
+    else
+    {
+        return INVALIDO;
+    }
+}
+
 bool Conta::validaSenha(int senha)
 {
     if(this->senha == senha)
