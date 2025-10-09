@@ -8,11 +8,13 @@
 class Banco
 {
 private:
-    Conta contas[NUMCONTAS];//Cria um vetor de objetos do tipo Conta que pode armazenar até 100 contas
+    int = numContas; 
+    int* vet = new Conta contas[numContas];//Cria um vetor dinâmico de objetos do tipo Conta 
 public:
     Banco();
     ~Banco();
     Conta* buscaConta(int numero); //Metodo que retorna o endereço do objeto conta que possui o mesmo numero informado
+    int CriaContas(senha, titular, tipo);
     void atendimento();
 };
 
