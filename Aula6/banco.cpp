@@ -2,19 +2,7 @@
 #include <iostream>
 
 using namespace std;
-/*
-void confere_flags(char flag)
-{
-    if(flag == ERRO)
-    {
-        cout<<"Senha invalida">>endl;
-    }
-    else if(flag == INVALIDO)
-    {
-        cout<<"Valor invalido">>endl;
-    }
-   
-}*/
+
 
 Banco::Banco() //O construtor criara 4 contas
 {
@@ -24,7 +12,7 @@ Banco::Banco() //O construtor criara 4 contas
     this->contas[3] = {8956, 4, "Madalena", "Poupanca", 2000};
 }
 // como o construtor cria 4 contas, cria-se uma variavel para ser o indice a partir desse valor:
-unsigned char index = 4;
+//unsigned char index = 4;
 Banco::~Banco()
 {
 }
@@ -41,7 +29,7 @@ Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o
 
     return nullptr;
 }
-
+/*
 Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas contas
 {
     if(index <= 100)
@@ -57,7 +45,7 @@ Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas con
         {
             cout <<"Numero maximo de contas atinjido">> endl;
         }
-}
+}*/
 
 void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na main)
 {
@@ -95,7 +83,7 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
             {
                 int op;
                 double valor;
-                cout << "Qual operacao deseja fazer? (1 - Saque, 2 - Deposito, 3 - Ver Saldo, 4 - Sair): ";
+                cout << "Qual operacao deseja fazer? (1 - Saque, 2 - Deposito, 3 - Transferencia 4 - Ver Saldo, 5 - Sair): ";
                 cin >> op;
                 switch (op)
                 {
@@ -139,7 +127,21 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                     }
                     
                     break;
-                case 3:
+                    
+                    case 3:
+                        valor = 0;
+                        cin >> valor;
+                        if(contacliente->transferencia(valor, c1, c2, senhain))
+                        {
+                            cout<<"Transferencia de R$";
+                            cout<<valor;
+                            cout<<"efetuada">>endl;
+                        }
+                        else
+                        {
+                            cout<<"Senha invalida">>endl;
+                        }
+                case 4:
                     if()
                     {
                         cout << "Saldo: R$ "<<contaCliente->getSaldo(senhain)<<endl;
@@ -150,18 +152,13 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                     
                         
                     }
-                
-                }
-                case 4:
+                case 5:
                     atendimento = false;
                     break;
+                
                 }
             }
         }
-        else
-        {
-            //confere_flags
-            cout << "Senha invalida" << endl;
-        }
+        
     }
 }
