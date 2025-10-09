@@ -29,23 +29,6 @@ Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o
 
     return nullptr;
 }
-/*
-Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas contas
-{
-    if(index <= 100)
-    {
-        Banco::Banco()
-        {
-            this->contas[index] = Conta(1234, 1, "Joao", "Corrente", 300);
-            
-        }
-    {
-    index++;
-    else
-        {
-            cout <<"Numero maximo de contas atinjido">> endl;
-        }
-}*/
 
 void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na main)
 {
@@ -59,10 +42,6 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
     cout<< "Caso deseje criar uma conta, digite '101'" >> endl;
     cout << "Caso deseje acessar a sua conta, digite seu numero: ";
     cin >> numC;
-    if(numC == 101)
-    {
-            
-    }
     
 
     contaCliente = this->buscaConta(numC); //Chama o Metodo buscaConta() do banco para achar o objeto conta que possui o numero numC
