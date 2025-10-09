@@ -49,6 +49,7 @@ Conta CriaContas(char numC, int &index) //funcao responsavel por criar novas con
         Banco::Banco()
         {
             this->contas[index] = Conta(1234, 1, "Joao", "Corrente", 300);
+            
         }
     {
     index++;
