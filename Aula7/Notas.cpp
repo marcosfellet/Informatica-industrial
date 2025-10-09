@@ -113,3 +113,26 @@ void main()
   soma(c,d); // compilador cira funcao com o template para tipo double
 }
 // Template serve para mudar os tipos de de variaveis
+
+/********************************************Classe pilha******************************************************/
+/*
+   Objetivo:   Guardar dados de modo que sejao inseridos e o primeiro que entra e o ultimo que sai
+   T *pPtr; => ponteiro que aponta para a memoria Heap, formando o vetor de variaveis
+   .hpp serve para a declaracao da classe e implementacao os metodos no mesmo arquivo
+   
+   O TEMPLATE PRECISA DA IMPLEMENTACAO DOS METODOS PARA QUE O COMPILADOR POSSA FAZER A IMLEMENTACAO PARA OS TIPOS ESPECIFICOS 
+
+detalhe importante: 
+  int tam;
+  cout<< "digite o tamanho do vetor"
+  cin>>tam;
+  
+  ESTA ERRADO!!!  tam e uma variavel nao constante
+
+  Forma correta:
+  int* vetD = new int[tam];
+*/
+
+
+
+
