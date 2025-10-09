@@ -80,3 +80,36 @@ int main()
   // for chama a funcao foo 100 vezes, cada execucao aloca espaco na memoria Heap, mas como nao ha o comando delete, ocorre o esgotamento da memoria Heap
 }
 
+/**************************************Template*****************************************************************/
+int soma(int a, int b)
+{
+  return a+b;
+}
+float soma(float a, float b)
+{
+  return a+b;
+}
+      /*
+      .
+      .
+      .
+      */
+double soma(double a, double b)
+{
+  return a+b;
+}
+// o template resolve esse problema:
+tempalate<typename T>
+  T soma(T a, T b)
+  {
+    return a+b;
+  }
+
+void main()
+{
+  int a = 10, b = 20;
+  double c = 32.40, d = 55.37;
+  soma(a,b); // compilador cira funcao com o template para tipo int
+  soma(c,d); // compilador cira funcao com o template para tipo double
+}
+// Template serve para mudar os tipos de de variaveis
