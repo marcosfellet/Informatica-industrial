@@ -6,15 +6,38 @@ using namespace std;
 
 Banco::Banco() //O construtor criara 4 contas
 {
-    
+    int Banco::CriaContas()
 }
 // como o construtor cria 4 contas, cria-se uma variavel para ser o indice a partir desse valor:
 //unsigned char index = 4;
 Banco::~Banco()
 {
+    
 }
 
-
+int Banco::CriaContas() // definindo o metodo de criacao de contas
+{
+    unsigned char senha, tipo;
+    int* vet_titular = new unsigned char[titular]; // cria um ponteiro que aponta para o vetor de tamanho "titular"
+    unsigned char i = 0; //variavel para encontrar o fim da string;
+    cout<<"Para criar uma nova conta, primeiramente, digite o seu nome completo">>endl;
+    cin>> titular;
+    cout<<"Digite uma senha de 8 digitos">>endl;
+    cin>> senha;
+    cout<<"Digite o tipo da conta">>endl;
+    cin>> tipo;
+    while(titular[i] != '\0')
+    {
+        i++; //obtendo o tamanho da string
+    }
+    unsigned char nome_titular[i];
+    for(int j = 0; j <= i; j++)
+    {
+        nome_titular[i] =     
+    }
+    
+    delete vet_titular; 
+}
 
 Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o mesmo numero informado
 {
@@ -36,9 +59,7 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
     int senhain;
     //unsigned char flag = 100; // variavel que verifica quais mensagens irao aparecer no 
     bool atendimento = true;
-    char criarConta = 0;
     cout << "Bem vindo ao sistema de atendimento do banco" << endl;
-    cout<< "Caso deseje criar uma conta, digite '101'" >> endl;
     cout << "Caso deseje acessar a sua conta, digite seu numero, caso deseje criar uma nova conta, digite 1 ";
     cin >> numC;
     
@@ -47,12 +68,14 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
 
     if (contaCliente == nullptr)//Se não achar nenhuma conta que corresponda entra nesse if
     {
-        cout << "Conta invalida" << endl;
-    
-    }
-    else if(contaCliente == 1)
-    {
-        
+        if(numC == 1)
+        {
+            /*************************************************************************/
+        }
+        else
+        {
+            cout << "Conta invalida" << endl;
+        }
     }
     else
     {
