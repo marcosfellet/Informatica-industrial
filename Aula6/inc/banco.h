@@ -8,7 +8,7 @@
 class Banco
 {
 private:
-    static int = numContas = 0; 
+    static int numContas = 0; 
     int* vet = new Conta contas[numContas];//Cria um vetor dinâmico de objetos do tipo Conta 
 public:
     Banco();
