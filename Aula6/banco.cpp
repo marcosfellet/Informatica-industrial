@@ -6,16 +6,15 @@ using namespace std;
 
 Banco::Banco() //O construtor criara 4 contas
 {
-    this->contas[0] = Conta(1234, 1, "Joao", "Corrente", 300);
-    this->contas[1] = {4567, 2, "Jose", "Poupanca", 800};
-    this->contas[2] = {7890, 3, "Maria", "Corrente", 1000};
-    this->contas[3] = {8956, 4, "Madalena", "Poupanca", 2000};
+    
 }
 // como o construtor cria 4 contas, cria-se uma variavel para ser o indice a partir desse valor:
 //unsigned char index = 4;
 Banco::~Banco()
 {
 }
+
+
 
 Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o mesmo numero informado
 {
@@ -37,10 +36,10 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
     int senhain;
     //unsigned char flag = 100; // variavel que verifica quais mensagens irao aparecer no 
     bool atendimento = true;
-
+    char criarConta = 0;
     cout << "Bem vindo ao sistema de atendimento do banco" << endl;
     cout<< "Caso deseje criar uma conta, digite '101'" >> endl;
-    cout << "Caso deseje acessar a sua conta, digite seu numero: ";
+    cout << "Caso deseje acessar a sua conta, digite seu numero, caso deseje criar uma nova conta, digite 1 ";
     cin >> numC;
     
 
@@ -49,6 +48,11 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
     if (contaCliente == nullptr)//Se não achar nenhuma conta que corresponda entra nesse if
     {
         cout << "Conta invalida" << endl;
+    
+    }
+    else if(contaCliente == 1)
+    {
+        
     }
     else
     {
