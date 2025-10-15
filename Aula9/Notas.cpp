@@ -23,4 +23,5 @@ Class Personagem
     voar();
     atacar();
 
+// protected: tipo de atributo que permite que apenas a classe e a suas derivadas "enchergam" os atributos
 
