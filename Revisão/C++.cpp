@@ -18,12 +18,13 @@
     funcoes
     
 2) Vetores
-    blocos de memorias com diversos segmentos de memoria individuais, mas com apenas um nome
-    Declaracao:
-      int vet[10];
-    Maneira programatica de se trabalhar com uma massa de dados
-      generalizacao e escalacao de dados
-
+    - Blocos de memorias com diversos segmentos de memoria individuais, mas com apenas um nome
+    - Declaracao:
+      - int vet[10]; 
+   - Maneira programatica de se trabalhar com uma massa de dados
+     - generalizacao e escalacao de dados
+   - Ponteiro que aponta para o primeiro espaco de memoria a ser ocupada por um inteiro
+   
 3) Ponteiros
     Variavei que armazena o endereco de memoria
     Uso:
@@ -98,10 +99,50 @@
         - criados, geralmente, para trabalhar com atributos estaticos
         
 11) Alocacao dinamica de memoria
+    - Alocacao de dados na Heap 
+    - Alocacao de um ponteiro na stack, permitindo salvar dados na Heap
+        - int* pnt = new in,
+              Stack |  Heap
+          Ponteiro salva o endereco de memoria a ser modificado
+    - Melhor pratica - RAII
 
+    
 12) Templates
+    - C++
+    - Generalizacao do codigo
+    - Criacao de familia de funcoes/classes com a MESMA logica, com flexibilidade de tipos de variaveis
 
-********************************************************** TOPICOS IMPORTANTES *************************************************************
+13) Heranca
+    - Um metodo para criar novas classes a partir de outra classe existente
+    - Quando fazer?
+        - Acrescentar atributos
+        - Modificar metodos existentes
+        - Adicionar novos metodos
+    - Principio ABERTO FECHADO
+    - O objeto da derivada e um objeto da base? 
+        - Sim:
+            - Classe derivada esta bem caracterizada
+        - Se precisar excluir algo, a hierarquia nao esta bem feita
+
+14) Polimorfismo
+    - So faz sentido quando aplicado sobre uma hierarquia de classes
+    - Programa uma programacao generica para a classe base e se trocar um metodo para a classe derivada, o metodo
+      utilizado sera da classe derivada 
+    - Um mesmo metodo pode ter comportamentos diferentes a depender do objeto utilizado
+    - Exemplo:
+        - Metodo: CalculaArea()
+        - Objeto: circuilo => pir²
+                  quadrado => l²
+                  e etc
+15) Classes Abstratas
+    - Um dos seus atributos puros
+    - Nao pode se instanciar
+    - Serve como interface
+
+*******************************************************************************************************************************************
+********************************************************** TOPICOS IMPORTANTES ************************************************************
+*******************************************************************************************************************************************
+
 1) NUNCA REPITIR CODIGO (manutencao e consistencia)
 
 2) SEPARACAO DE RESPONSABILIDADES
@@ -118,5 +159,9 @@
 5) RAII: Resource Acquisition Is Initialization
         - ALOCACAO E DESALOCACAO
         - um recurso e adquirido durante a inicializacao de um objeto e liberado automaticamente quando o objeto e destruido
+
+6) PRINCIPIO ABERTO FECHADO
+    - A classe deve ser aberta a extencao e fechada a modificacao
+
 
 */
