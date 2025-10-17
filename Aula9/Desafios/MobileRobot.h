@@ -1,3 +1,4 @@
+#ifndef CONTA_H
 
 class Robot
 {
@@ -11,3 +12,4 @@ class Robot
 
 
 }
+endif
