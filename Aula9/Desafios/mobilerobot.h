@@ -10,7 +10,7 @@ class Robot
 {
   private:
     double PosicaoAtual[3];
-
+    unsigned char senha = 000000;
   public:
     Robot(double x, double y, double z);
     ~Robot();
