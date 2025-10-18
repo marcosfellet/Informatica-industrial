@@ -14,11 +14,12 @@ class Robot
   public:
     Robot(char senha, double x, double y, double z);
     ~Robot();
+    int validaSenha(char senha);
     double getPosicaoAtual(char coordenada);
     void setPosicaoAtual(double X, double Y, double Z);
     virtual void Mover(double Xvel, double Yvel, double Zvel, double tempo) =0;
     int validaPosicao(double X, double Y, double Z);
-
+    
 
 };
 
