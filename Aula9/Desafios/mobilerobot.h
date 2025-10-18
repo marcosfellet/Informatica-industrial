@@ -14,6 +14,7 @@ class Robot
     double getPosicaoAtual(char coordenada);
     void setPosicaoAtual(double X, double Y, double Z);
     virtual void Mover(double Xvel, double Yvel, double Zvel, double tempo) =0;
+    int validaPosicao(double X, double Y, double Z);
 
 
 }
@@ -24,7 +25,6 @@ class Quadrotor: public Robot
 
   public:
 
-  int validaPosicao(double X, double Y, double Z);
   
 
 class RoboTerrestre: public Robot
