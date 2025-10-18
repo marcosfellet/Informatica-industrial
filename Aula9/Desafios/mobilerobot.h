@@ -12,4 +12,15 @@ class Robot
 
 
 }
+
+class Quadrotor: public Robot
+{
+  private:
+
+  public:
+
+}
+
+
+
 #endif
