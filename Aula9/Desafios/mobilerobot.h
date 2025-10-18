@@ -19,7 +19,7 @@ class Robot
     int validaPosicao(double X, double Y, double Z);
 
 
-}
+};
 
 class Quadrotor: public Robot
 {
@@ -27,7 +27,8 @@ class Quadrotor: public Robot
 
   public:
   Mover(double Xvel, double Yvel, double Zvel, double tempo);
-  
+
+};
 
 class RoboTerrestre: public Robot
 {
@@ -36,6 +37,7 @@ class RoboTerrestre: public Robot
   public:
   Mover(double Xvel, double Yvel, double Zvel, double tempo);
 
+};
 
 }
 
