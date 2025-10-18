@@ -1,5 +1,10 @@
 #ifndef MOBILEROBOT_H
 #define MOBILEROBOT_H
+
+#define CHAO 0
+#define ERROR -1
+
+
 class Robot
 {
   private:
@@ -19,8 +24,17 @@ class Quadrotor: public Robot
 
   public:
 
+  int validaPosicao(double X, double Y, double Z);
+  
+
+class RoboTerrestre: public Robot
+{
+  private:
+    
+  public:
+
+
+
 }
-
-
 
 #endif
