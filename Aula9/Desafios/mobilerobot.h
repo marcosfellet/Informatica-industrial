@@ -12,7 +12,7 @@ class Robot
     double PosicaoAtual[3];
     unsigned char senha = 000000;
   public:
-    Robot(double x, double y, double z);
+    Robot(char senha, double x, double y, double z);
     ~Robot();
     double getPosicaoAtual(char coordenada);
     void setPosicaoAtual(double X, double Y, double Z);
