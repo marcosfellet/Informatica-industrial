@@ -1,7 +1,7 @@
 #ifndef ROBOTERRESTRE_H
 #define ROBOTERRESTRE_H
 
-#include "conta.h"
+#include "mobilerobot.h"
 
 class RoboTerrestre: public Robot
 {
