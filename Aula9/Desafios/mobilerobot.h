@@ -39,6 +39,4 @@ class RoboTerrestre: public Robot
 
 };
 
-}
-
 #endif
