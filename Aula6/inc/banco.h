@@ -8,9 +8,9 @@
 class Banco
 {
 private:
-    static int numContas = 0; 
-    unsigned char titular; 
-    int* vet = new Conta contas[numContas];//Cria um vetor dinâmico de objetos do tipo Conta 
+    int numContas; 
+    //unsigned char titular; 
+    Conta* contas;//Cria um vetor dinâmico de objetos do tipo Conta 
 public:
     Banco();
     ~Banco();
