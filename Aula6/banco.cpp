@@ -6,7 +6,14 @@ using namespace std;
 
 Banco::Banco() //O construtor criara 4 contas
 {
-    int Banco::CriaContas()
+    //int Banco::CriaContas()
+
+    this->numContas = 0;
+    this->contas = new Contas[this->numContas];
+    
+    //this->CriaContas();
+    
+    
 }
 // como o construtor cria 4 contas, cria-se uma variavel para ser o indice a partir desse valor:
 //unsigned char index = 4;
@@ -17,31 +24,40 @@ Banco::~Banco()
 
 int Banco::CriaContas() // definindo o metodo de criacao de contas
 {
-    unsigned char senha, tipo;
-    int* vet_titular = new unsigned char[titular]; // cria um ponteiro que aponta para o vetor de tamanho "titular"
-    unsigned char i = 0; //variavel para encontrar o fim da string;
-    cout<<"Para criar uma nova conta, primeiramente, digite o seu nome completo">>endl;
-    cin>> titular;
-    cout<<"Digite uma senha de 8 digitos">>endl;
-    cin>> senha;
-    cout<<"Digite o tipo da conta">>endl;
-    cin>> tipo;
-    while(titular[i] != '\0')
-    {
-        i++; //obtendo o tamanho da string
-    }
-    unsigned char nome_titular[i];
-    for(int j = 0; j <= i; j++)
-    {
-        nome_titular[i] =     
-    }
+    int nova_senha, novo_numero;
+    string novo_titular, novo_tipo;
+    double saldo_inicial;
     
-    delete vet_titular; 
+    cout<<"Para criar uma nova conta, primeiramente, digite o seu nome completo">>endl;
+    cin>> novo_titular;
+    cout<<"Digite uma senha de 8 digitos">>endl;
+    cin>> nova_senha;
+    cout<<"Digite o tipo da conta">>endl;
+    cin>> novo_tipo;
+
+    novo_numero = this->numContas + 1;
+
+    saldo_inicial = 0;
+
+    Conta novaConta = Conta(nova_senha, novo_numero, novo_titular, novo_tipo, saldo_inicial);
+
+    Conta* novo_vetor = new Conta[this->numContas + 1];
+
+    for(int i = 0; i<this->numContas + 1; i++){
+        novo_vetor[i] = this->contas[i];   
+    }
+    delete[] this->contas;
+    
+    novo_vetor[this->numContas] = novaConta;
+    this->contas = novo_vetor; 
+    this->numContas ++;
+
+    return 1;
 }
 
 Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o mesmo numero informado
 {
-    for (int i = 0; i < NUMCONTAS; i++)
+    for (int i = 0; i < this->numContas; i++)
     {
         if (numero == this->contas[i].numero)
         {
