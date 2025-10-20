@@ -30,7 +30,7 @@ int Robot::validaSenha(int senha)
 double Robot::getPosicaoAtual(char coordenada)
 {
     double posicao;
-    if(validaSenha() == SENHA_CORRETA)
+    if(validaSenha(senha) == SENHA_CORRETA)
     {
         if(coordenada == 'x')
         {
@@ -60,7 +60,17 @@ double Robot::getPosicaoAtual(char coordenada)
 }
 void Robot::setPosicaoAtual(double x, double y, double z)
 {
-  
+      if(validaSenha(senha) == SENHA_CORRETA)
+      {
+           cout<<"Digite os valores de x, y e z:"<<endl;   
+           cin>> x ; // le o valor em x
+           cin>> y; // le o valor em y
+           cin>> z; // le o valor em z  
+      }
+    else
+      {
+          cout<<"Senha Invalida"<<endl;
+      }
   
 }
 
