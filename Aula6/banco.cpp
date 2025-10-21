@@ -27,32 +27,52 @@ int Banco::CriaContas() // definindo o metodo de criacao de contas
     int nova_senha, novo_numero;
     string novo_titular, novo_tipo;
     double saldo_inicial;
+    unsigned char cancela;
     
-    cout<<"Para criar uma nova conta, primeiramente, digite o seu nome completo">>endl;
+    cout<<"Para criar uma nova conta, primeiramente, digite o seu nome completo"<<endl;
     cin>> novo_titular;
-    cout<<"Digite uma senha de 8 digitos">>endl;
+    cout<<"Digite uma senha de 8 digitos"<<endl;
     cin>> nova_senha;
-    cout<<"Digite o tipo da conta">>endl;
+    cout<<"Digite o tipo da conta"<<endl;
     cin>> novo_tipo;
-
-    novo_numero = this->numContas + 1;
-
-    saldo_inicial = 0;
-
-    Conta novaConta = Conta(nova_senha, novo_numero, novo_titular, novo_tipo, saldo_inicial);
-
-    Conta* novo_vetor = new Conta[this->numContas + 1];
-
-    for(int i = 0; i<this->numContas + 1; i++){
-        novo_vetor[i] = this->contas[i];   
-    }
-    delete[] this->contas;
+    cout<<"Para cancelar a operaca, digite 1"<<endl;
+    cin>> cancela;
+    if(cancela != 1)
+    {
+        novo_numero = this->numContas + 1;
+        
+        saldo_inicial = 0;
     
-    novo_vetor[this->numContas] = novaConta;
-    this->contas = novo_vetor; 
-    this->numContas ++;
-
-    return 1;
+        Conta novaConta = Conta(nova_senha, novo_numero, novo_titular, novo_tipo, saldo_inicial);
+    
+        Conta* novo_vetor = new Conta[this->numContas + 1];
+    
+        for(int i = 0; i<this->numContas + 1; i++){
+            novo_vetor[i] = this->contas[i];   
+        }
+        delete[] this->contas;
+        
+        novo_vetor[this->numContas] = novaConta;
+        this->contas = novo_vetor; 
+        this->numContas ++;
+    
+        return VALIDO;
+    }
+    else
+    {
+        return ERRO;
+    }
+}
+/*
+A ideia e nao apagar as posicoes das contas deletadas, mas sim, alterar seus dados com 
+alguma informacao padrao, para que possam ser sobrescritas quand for criada uma conta nova
+*/
+int Banco::ApagaContas(*Conta contaCliente, int senha, *int numC)
+{
+    contaCliente 
+    
+    int* posicoes_livres = new ids[]; // cria poteiro para gardar as posicoes livres dos ids das contas
+       
 }
 
 Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o mesmo numero informado
@@ -84,14 +104,7 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
 
     if (contaCliente == nullptr)//Se não achar nenhuma conta que corresponda entra nesse if
     {
-        if(numC == 1)
-        {
-            /*************************************************************************/
-        }
-        else
-        {
-            cout << "Conta invalida" << endl;
-        }
+        cout << "Conta invalida" << endl;
     }
     else
     {
