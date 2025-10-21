@@ -7,7 +7,7 @@ class Banco
 {
 private:
     int numContas; 
-    int contas_apagadas;
+    //int contas_apagadas;
     Conta* contas;//Cria um vetor dinâmico de objetos do tipo Conta 
     int* posicoes_livres; // Cria um vetor dinamico de objetos do tipo int
 public:
