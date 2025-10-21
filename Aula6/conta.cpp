@@ -1,3 +1,4 @@
+
 #include "conta.h"
 #include <iostream>
 
@@ -25,7 +26,7 @@ Conta::Conta(int senha, int numero, std::string titular, std::string tipo, doubl
     }
     else
     {
-        return INVALIDO; 
+        return ERRO; 
     }    
 }
 
@@ -67,7 +68,7 @@ void Conta::setSaldo(double valor)
     }
     else
     {
-        return INVALIDO;
+        return ERRO;
     }
     //std::cout<<"Valor inválido"<<std::endl;
 }
@@ -94,8 +95,8 @@ void Conta::deposito(double valor)
     }
     else
     {
-        return INVALIDO;
-        //std::cout<<"Valor invalido"<<std::endl;
+        return ERRO;
+        //std::cout<<"Valor ERRO"<<std::endl;
     }
     
 }
@@ -114,7 +115,7 @@ void Conta::saque(int senha, double valor)
         }
         else
         {
-            return INVALIDO;
+            return ERRO;
             //std::cout<<"Saldo insuficiente"<<std::endl;
         }    
     }
@@ -137,7 +138,7 @@ int Conta::transacao(double &valor, Conta* c1, Conta* c2, int senha)
     }
     else
     {
-        return INVALIDO;
+        return ERRO;
     }
 }
 
@@ -145,11 +146,10 @@ bool Conta::validaSenha(int senha)
 {
     if(this->senha == senha)
     {
-        return SENHA_CORRETA;
+        return VALIDO;
     }
     else
     {
         return ERRO;
     }
 }
-
