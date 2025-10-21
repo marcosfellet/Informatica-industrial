@@ -1,8 +1,6 @@
 #ifndef CONTA_H
-#define SENHA_CORRETA 1
-#define ERRO -2 // utilizado para senha invalida
-#define VALIDO 2
-#define INVALIDO -1
+#define VALIDO 1
+#define ERRO -2 
 
 class Conta
 {
