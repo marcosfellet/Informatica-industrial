@@ -120,7 +120,7 @@ void main()
    T *pPtr; => ponteiro que aponta para a memoria Heap, formando o vetor de variaveis
    .hpp serve para a declaracao da classe e implementacao os metodos no mesmo arquivo
    
-   O TEMPLATE PRECISA DA IMPLEMENTACAO DOS METODOS PARA QUE O COMPILADOR POSSA FAZER A IMLEMENTACAO PARA OS TIPOS ESPECIFICOS 
+   O TEMPLATE PRECISA DA IMPLEMENTACAO DOS METODOS PARA QUE O COMPILADOR POSSA FAZER A IMPLEMENTACAO PARA OS TIPOS ESPECIFICOS 
 
 detalhe importante: 
   int tam;
