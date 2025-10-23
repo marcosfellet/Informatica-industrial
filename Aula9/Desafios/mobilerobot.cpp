@@ -6,9 +6,6 @@ using namespace std;
 Robot::Robot(char senha, double x, double y, double z) // construtor dos objetos robos
 {
     this->senha = senha;
-    x = PosicaoAtual[0];
-    y = PosicaoAtual[1];
-    z = PosicaoAtual[2];
 }
 ~Robot::Robot() // destrutor dos objetos robos
 {
@@ -30,21 +27,21 @@ int Robot::validaSenha(int senha)
 double Robot::getPosicaoAtual(char coordenada)
 {
     double posicao;
-    if(validaSenha(senha) == SENHA_CORRETA)
+    if(validaSenha() == SENHA_CORRETA)
     {
         if(coordenada == 'x')
         {
-            posicao = this->x;
+            posicao = this->PosicaoAtual[0];
             cout<<"Posicao em x: "<< posicao <<endl;
         }
         else if(coordenada == 'y')
         {
-            posicao = this->y;
+            posicao = this->PosicaoAtual[1];
             cout<<"Posicao em z: "<< posicao <<endl;
         }
         else if(coordenada == 'z')
         {
-            posicao = this->z;
+            posicao = this->PosicaoAtual[2];
             cout<<"Posicao em z: "<< posicao <<endl;
         }
         else
@@ -60,12 +57,12 @@ double Robot::getPosicaoAtual(char coordenada)
 }
 void Robot::setPosicaoAtual(double x, double y, double z)
 {
-      if(validaSenha(senha) == SENHA_CORRETA)
+      if(validaSenha() == SENHA_CORRETA)
       {
            cout<<"Digite os valores de x, y e z:"<<endl;   
-           cin>> x ; // le o valor em x
-           cin>> y; // le o valor em y
-           cin>> z; // le o valor em z  
+           cin>> this->PosicaoAtual[0] ; // le o valor em x
+           cin>> this->PosicaoAtual[1]; // le o valor em y
+           cin>> this->PosicaoAtual[2]; // le o valor em z  
       }
     else
       {
