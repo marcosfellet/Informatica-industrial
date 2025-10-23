@@ -59,10 +59,13 @@ void Robot::setPosicaoAtual(double x, double y, double z)
 {
       if(validaSenha() == SENHA_CORRETA)
       {
-           cout<<"Digite os valores de x, y e z:"<<endl;   
-           cin>> this->PosicaoAtual[0] ; // le o valor em x
-           cin>> this->PosicaoAtual[1]; // le o valor em y
-           cin>> this->PosicaoAtual[2]; // le o valor em z  
+           cout<<"Digite os valores de x, y e z:"<<endl; 
+           cin>> x;
+           cin>> y;
+           cin>> z;
+           this->PosicaoAtual[0] = x ; // le o valor em x
+           this->PosicaoAtual[1] = y; // le o valor em y
+           this->PosicaoAtual[2] = z; // le o valor em z  
       }
     else
       {
@@ -71,4 +74,9 @@ void Robot::setPosicaoAtual(double x, double y, double z)
   
 }
 
+virtual void Robot::mover(double xVel, double yVel, double zVel, double tempo) = 0;
+{
+    
+    
+}
 
