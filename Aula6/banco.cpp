@@ -67,13 +67,14 @@ int Banco::CriaContas() // definindo o metodo de criacao de contas
 A ideia e nao apagar as posicoes das contas deletadas, mas sim, alterar seus dados com 
 alguma informacao padrao, para que possam ser sobrescritas quand for criada uma conta nova
 */
-int Banco::ApagaContas(*Conta contaCliente, int senha, *int numC)
-{
-    contaCliente 
+
+// int Banco::ApagaContas(*Conta contaCliente, int senha, *int numC)
+// {
+//     contaCliente 
     
-    int* posicoes_livres = new ids[]; // cria poteiro para gardar as posicoes livres dos ids das contas
+//     int* posicoes_livres = new ids[]; // cria poteiro para gardar as posicoes livres dos ids das contas
        
-}
+// }
 
 Conta *Banco::buscaConta(int numero)//Retorna o endereço da conta que possuir o mesmo numero informado
 {
@@ -127,30 +128,19 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                     cin>>valor;
                     if(contaCliente->saque(senhain,valor) == 1)
                     {
-                        contaCliente->saque(senhain,valor)
-                        cout<<"Saque de R$"<<contaCliente->saque(senhain,valor)r<<" realizado com sucesso."<<endl;
+                        cout<<"Saque de R$"<<valor<<" realizado com sucesso."<<endl;
                         break;   
-                    }
-                    else if(contaCliente->saque(senhain,valor) == 0)
-                    {
-                        flag = ERRO;
-                        confere_flags(flag);
-                        flag = 100;
-                        //cout<<"Senha invalida">>endl;
-                        continue;
                     }
                     else
                     {
                         cout<<"Saldo insuficiente"<<endl;
-                       // op = 1;
-                        continue;
                     }
                 case 2:
                     cout << "Digite o valor: ";
                     cin>>valor;
                     if(contaCliente->deposito(valor) == 1)
                     {
-                        cout<<"Deposito de R$ "<<contaCliente->deposito(valor);
+                        cout<<"Deposito de R$ "<<valor;
                         cout<<"efetuado">>endl;
                         break;
                     }
@@ -165,27 +155,37 @@ void Banco::atendimento() //Realiza o atendimento ao cliente(Função chamada na
                     
                     case 3:
                         valor = 0;
+                        int numTransacao;
+                        int senhain = 0;
+                        cout << "Digite o numero da conta destinataria" <<endl;
+                        cin >> numTransacao;
+                        cout << "Digite o valor a ser transferido" <<endl;
                         cin >> valor;
-                        if(contacliente->transferencia(valor, c1, c2, senhain))
-                        {
+                        cout << "Digite a sua senha" <<endl;
+                        cin << senhain;
+    
+                        contaCliente2 = this->buscaConta(numTransacao);
+                        if(contaCliente->saque(senhain, valor) == 1)
+                            contaCliente2->deposito(valor);
                             cout<<"Transferencia de R$";
                             cout<<valor;
-                            cout<<"efetuada">>endl;
+                            cout<<"efetuada"<<endl;
                         }
                         else
                         {
-                            cout<<"Senha invalida">>endl;
+                            cout<<"Senha invalida"<<endl;
                         }
                 case 4:
-                    if()
+                    cout << "Digite a sua senha" <<endl;
+                    cin << senhain;
+                    if(contaCliente->getsaldo(senhain))
                     {
                         cout << "Saldo: R$ "<<contaCliente->getSaldo(senhain)<<endl;
                         break;
                     }
                     else
                     {
-                    
-                        
+                        cout<<"Senha inválida"<<endl;
                     }
                 case 5:
                     atendimento = false;
