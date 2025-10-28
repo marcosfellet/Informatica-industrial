@@ -20,7 +20,6 @@ public:
     void setSenha(int novaSenha);
     void deposito(double valor);
     void saque(int senha, double valor);
-    void transacao(double valor, int id1, int id2);
     bool validaSenha(int senha);
 
 };
