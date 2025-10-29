@@ -124,3 +124,27 @@ class NomedaClasse:
 
 # No python e automatico
 
+# Se quiser o metodo da base, tendo um metodo diferente na derivada, utilizar:
+  super()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
