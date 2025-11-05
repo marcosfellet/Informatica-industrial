@@ -62,9 +62,9 @@
                     - Programa executando e a energia cai
                     - Geradas a nivel de sistema op de modo a criar um modo alternativo de tratar essas circuinstâncias
                       a fim de não criar grandes inconsistências no algoritmo
-                    - Criação de blocos passíveis de exceção
+                    - Criação de blocos passíveis de exceção (try)
                         - se ela ocorrer, criar uma exceção, except, para criar o caminho alternativo
-                
+                    
 *****************************************************************************************************************************8
 
 procurar no google "socket python"
