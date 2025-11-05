@@ -14,4 +14,18 @@
       - IP do dispositivo 
       - Decidir porta
       - Decidir protocolo da camada de transporte (UDP ou TCP) 
+  - Padrões Arquiteturais
+      - Padrão Cliente-Servidor 
+          - Youtube, jogos, etc
+          - Ativo da comunicação: cliente
+          - Servidor passivo: só responde a demandas do cliente
+          - Servidor não sabe onde está o cliente
+          - Cliente precisa saber onde está o servidor
+              - Exemplo: Google não precisa saber o endereço de usuários, apenas sabe na hora do acesso,
+                         mas, o cliente precisa saber o endereço do google para usá-lo
+      - Padrão Publisher-Subscriber
+          - Nós de recebimento e nós de emissão de dados
+      
+
+          
 */
