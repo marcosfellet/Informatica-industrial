@@ -81,4 +81,10 @@ Não usar portas acima de 1024 para evitar conflitos com os serviços do sistema
         - Cria socket
         - Dá o conect
 
+
+
+
+
+        
+
 */
