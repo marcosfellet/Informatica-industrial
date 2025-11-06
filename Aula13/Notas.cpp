@@ -69,7 +69,16 @@
 
 procurar no google "socket python"
 
+Não usar portas acima de 1024 para evitar conflitos com os serviços do sistema operacional
 
-                
+    - Servidor Genérico
+        - primeira coisa que se faz no servidor, é a leitura (Ler mensagem em bytes)
+        - decodificar mensagem  --> protocolo da camada de aplicação
+        - Processar requisição
+        - Codificação da resposta
+        - Envio dos dados finais
+    - Cliente
+        - Cria socket
+        - Dá o conect
 
 */
