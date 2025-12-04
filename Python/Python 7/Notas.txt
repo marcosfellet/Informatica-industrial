@@ -1,0 +1,59 @@
+kivy 
+    - Separação de lógica e interface
+
+    - BoxLayout 
+        - Componente básico que dispõe outros componentes na horizontal 
+        - Num BoxLayout horizontal, a proporção de altura é ignorada, o mesmo ocorre com o vertical
+            - Solução: Não usar um BoxLayout, usar outro layout que permita isso    
+    - Redimensionamento de tamanho e Reposicionamento
+        - Widget
+            - size_hint
+                - Soma dos lados deve dar 1
+                - exemplo:
+                    - botão 1: size_hint(0.2, 1)
+                    - botão 2: size_hint(0.8, 1)
+                    - Resultado:
+                            _________________________
+                            |       |               |
+                            |       |               |
+                            |       |               |
+                            |   20% |      80%      |               
+                            __________________________
+                    - Essas proporções são correspondentes ao pai
+                        - Exemplo   
+                            - BoxLayout (50%)
+                                - bt1
+                                - bt2 (25%)
+                            => bt2 tem 25% de 50% da tela, ou 12,5% da tela
+            - pos_hint
+                - Layouts que tem flexibilidade de posicionamento
+                    - FloatLayout
+                    - RelativeLayout
+                - É um dicionário!!!!!
+                - Em cada pos_hint é possível usar duas das 6 chaves, devido à concorrência de comando
+                - Exemplo:
+                            _________________________
+                            |                       |
+                            |         ___           |
+                            |        |___|          |
+                            |        (x,y)          |               
+                            __________________________
+                - Chaves:
+                    - x e y: Coordenadas do ponto inferior esquerdo
+                    - right: posição do lado direito do widget
+                    - top: posição do topo do widget
+                    - center_x: posição da coordenada x do centro do widget
+                    - center_y: posição da coordenada y do centro do widget
+    - Módulo Clock
+        - Aplicações dinâmicas
+            - Animações (Mudanças de frames)
+        - Gera eventos temporizados 
+            - Criar uma função e frequência de chamada
+            - Programa umma execução com delay
+            - Agendar a execução de uma função para o próximo frame
+                - Clock.schedule_once(my_callback) 
+                - Roda na mesma thread que o motor gráfico (thread principal)
+                    - Troca de imagens no kivy não é permitida em thread secundária
+                        - Solução:
+                            - Utilizar função Clock.schedule_once(my_callback), que chama a my_callback, 
+                              da thread principal, para mudar a imagem da thread secundária 

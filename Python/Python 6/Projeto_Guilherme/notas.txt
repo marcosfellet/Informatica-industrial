@@ -1,0 +1,2 @@
+1 - herança 
+2 - kivy é uma linguagem orientada a eventos

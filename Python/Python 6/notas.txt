@@ -1,0 +1,8 @@
+Licensas:
+    1 - GPL
+        i - OpenSource, mas obriga os derivados a ser OpenSource também
+    2 - BSD
+    3 - MIT
+        i - OpenSource, mas derivados podem ser códigos fechados e vendê-los   
+        ii - kivy (site: kivyMD)
+    

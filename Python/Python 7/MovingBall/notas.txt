@@ -1,0 +1,14 @@
+- Ver widget raíz: ver o que o método build está retornando!!!!
+
+    BoxLayout:
+  _________________________
+ |                         |
+ |                         |  
+ |                         |  
+ |                         |      
+ | _                       |
+ ||_|______________________|
+ |  Mover     | velocidade | 
+ |            |____________|
+ |            |o_________  | (slider)
+ |____________|____________|

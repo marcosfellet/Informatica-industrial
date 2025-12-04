@@ -1,0 +1,14 @@
+.kv:
+    letras maiusculas: novos componentes (filhos)
+    letras minusculas: propriedades/características
+
+    self => refere-se ao componente atual
+
+    root => raiz da árvore da implementação (raiz da árvore de componentes)
+
+    app  => objeto da aplicação (instância da aplicação)
+
+    id   => acessa qualquer outro componente da interface
+
+    o kivy já identifica o nome da classe - o App, (BasicApp - App = basic = nome do arquivo .kv)
+

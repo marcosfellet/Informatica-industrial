@@ -1,0 +1,98 @@
+************************Sobre o código da calculadora*****************
+- Segundo cliente não é respondido enquanto o primeiro não for atendido
+    - enquanto um cliente não é atendido, ele não sai do service
+    Solução: Programação concorrente
+
+*****************************IMPORTANTE************************
+
+- Todo programa em execução é um processo no sis op => 
+registradores de controle de execução (um deles é o program counter), memória (código - memória de programa, stack, heap), 
+program counter
+    - Cada processo terá separação de recursos: nativamente, não tem como acessar dados de diferentes programas
+    - Compartilhamento de recursos entre processos é algo difícil
+    - sis roda o programa => aloca processos em núcleos separados: uso de 3 núcleos do computador: 3 processos (programa em execução) 
+    
+-  Thread: linha de execução => conjunto sequencial de instruções
+    - Cada trhead tem sua stack e seu conjunto de registradores  
+    - Atributos (self.algo) são compartilhados entre threads => compartilhamento de recursos é fácil 
+    - Variáveis locais são separadas para cada thread
+    - Exemplo da calculadora: 2 clientes independentes => 2 threads
+    - Códigos feitos até então: single thread
+    - Mult Thread e Single Thread
+
+
+
+- Concorrência
+    - Uma tarefa que compartilha recursos computacionais com outra
+    - Alternância entre tarefas (executa uma um pouco, por vez) 
+    - Escalonador do sis op vai definir como os programas serão rodados
+    - Ex:
+        3 Tarefas: Ta, Tb e Tc com um núcleo:
+        1 - Roda Ta, roda Tb, roda Tc => Tc demora bastante para rodar
+        2 - Roda fragmentos das tarefas:
+            Ta1, Tb1, Tc1, Ta2, Tb2, Tc2, Ta3, Tb3, Tc3
+            tarefas executadas rapidamente de maneira concorrente "ao mesmo tempo"
+            Mais tempo gasto ao chavear entre programas (overhead)            
+            Se houver muitas tarefas em execução, a latência (delta_t) do momento em que Ta1 e Ta2 irá aumentar
+                - Sensação de lag
+
+- Paralelismo
+    - Processos sendo executados de maneira paralela
+    - Mais de um núcle usado para poder realizar mais de uma tarefa ao mesmo tempo
+
+Quando usar o que:
+
+    - Classes de programas
+        - I/O-Bound
+            Entrada/Saída => leitura e escrita do disco, teclado, envio e recebimento de dados da rede
+            pequeno tempo de processamento e grande tempo de espera de resposta independente do processador
+            Ex: todos os programas de entrada de dados que dependem do usuário
+            - Calculadora feita em sala de aula
+            - Ser humano demora muito, para um computador, a responder
+            - Tempo de ociosidade pode ser usado para processar outro processo
+            - Alternar entre tarefas (threads) devido ao delta_t
+            => Programação concorrente
+                -Multithreading (multitasks)
+                    - Preemptiva*
+                        - Sis Op define o instante de chaveamento entre tarefas
+                        - Risco de corrupção de espaço de memória devido ao chaveamento
+                    - Cooperativa
+                        - Programador define o instante de chaveamento entre tarefas
+                        - Programação assíncrona
+        - CPU-Bound
+            Problemas computacionalmente intensivos
+            - Simulações computacionais
+            - Sem ociosidade da cpu
+            - Realizar uma tarefa por vez
+            - Concorrência PIORA a rapidez computacional
+            => Programação paralela
+                -Multiprocessing
+                    - Compartilhamento de dados é complexo
+    
+Multithreading
+    - Criação de uma função para realizar outra thread indepentende
+    - Comuta na instrução bloqueante
+    - Problemas colaterais
+        - Identificação
+            - Função executada por mais de uma thread
+                - Tem variável compartilhada?
+                    - Não
+                        - Não haverá problemas  
+                    - Sim
+                        - Pode haver problemas 
+                            - Tarefa A está utilizando uma variável, sis op torca para tarefa B, terefa B modifica a variável, dados corrompidos
+                            - Resultados inconsistentes, devido ao escalonador do sis op
+        - Solução 
+            - Sincronismo
+                - Lock
+                    - Identificar seção critica
+                        - Onde há modificação da variável compartilhada 
+                    - Botar o lock antes e depois um release
+                
+                - Join 
+                    - Comando bloqeante que bloqueia a thread principal até que uma thread tenha terminado
+                    - Dispara todas as threads ao mesmo tempo, mas espera todas terinarem para obter o resultado final do processo
+                
+                - Semáforo 
+                    - Define quantas threads vão executar de maneira concorrente
+                        - "Blocos de threads" 

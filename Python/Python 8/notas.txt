@@ -1,0 +1,129 @@
+Banco de Dados
+    - Dado x Informação
+        - Dado: fato que pode ser gravado em algo (númeroc data, nome, etc)
+        - Informação: Semântica de um dado: significado de um dado em um determinado contexto
+        - ex: Senha do banco = 12356
+            - senha do banco = informação
+            - 123456 = dado
+        - Metadados
+            - Explicação do dado
+            - Descrição e definição dos dados
+            - "dados sobre os dados"
+            - Metadado + dado = informação
+            - ex: data do TVC 1: 21/10/2025
+                - Metadado: data do TVC 1
+                - dado: 21/10/2025
+    
+    - Sistema de banco de dados
+        - Possibilita:
+            - Adição de novos arquivos
+            - Inserir novos dados nos arquivos existentes
+            - Atualizar dados nos arquivos existentes
+            - Eliminar dados nos arquivos existentes
+
+        - O usuário NÃO pode manipular os dados
+        - SGBD (Sistema de Gerenciamento de Banco de Dados)
+            - Programa que faz a interface entre a base de dados e as aplicações
+            - Não permite escrita de tipos errados de dados
+    
+    - Modelo de banco de dados
+        - Relacionais
+            - Mais comum
+            - Coleção de tabelas
+            - Banco de tabelas interrelacionadas
+            - Vantagens de tabelas: Metadados nas descrição de colunas
+              => 1 metadado para vários dados => economia de espeço para metadados 
+            - Tabela ou relação: estrutura básica do SGDB 
+            - Linha/Registro/Tupla 
+                - 1 Tupla ou 1 linha 
+                - registro = linha; há colunas obrigatórias e opcionais
+                - registro = conjunto de dados que compõem uma linha da tabela
+            - Coluna: 
+                - Possuí um dado atrelado ao uma informação
+
+            - Relacionamento: 
+                - Associação de tabelas relacionadas por chaves primárias e chaves estrangeiras
+                - Chave primária: coluna que identifica um registro de forma exclusiva (número inteiro ssequêncial)
+                - Chave estrangeira: coluna que define como uma tabela se relaciona com outras
+                    - Chave estrangeira se relaciona com chave primária para fazer o relacionamento entre tabelas 
+                - Exemplo:
+                    idmed   serial-sensor   marca   dt_calib    unidade    valor 
+                      1         804x        XPTO   24/02/2020      L        80
+                      2         804x        XPTO   24/02/2020      L        79
+                      3         805x        YPTO   30/07/2021      m³       60
+                      4         805x        YPTO   30/07/2021      m³       65
+                    - Problema: repetição de informação: (sensor, data, marca, unidade)
+                        => problema de memória
+                    - Solução: Tabelas diferentes associadas
+                        Sensores                marca   dt_calib     unidade              Medições
+                     idSensor serial-sensor                                             idmed  idSensor  valor
+                        1         804x          XPTO    24/02/2024      L                 1       1       80
+                        2         805x          YPTO    30/07/2021      m³                2       1       79
+                                                                                          3       2       60
+                                                                                          4       2       65
+        
+
+        - Não-Relacionais
+
+    - Linguagem SQL
+        - Como se comunicar com o SGDB
+        - padrão: ISO e ANSI
+        - Manda strings
+        - Definição (DDL)
+            - Subgrupo do SQL para a criação das tabelas
+            - Tipo de dado é importantíssimo de informar para otimizar ao máximo o funcionamento do
+              banco de dados 
+        - Principais comandos
+            - Create: criação de novas estruturas
+            - Alter: alteração de estruturas existentes
+            - Drop: remoção de estruturas
+            - Alteram a ESTRUTURA da tebela
+            
+        
+        - Manipulação (DML)
+            - Subgrupo para inserir/remover/atualizar e consultar os dados
+            - Principais comandos
+                - Insert: inserção de registros
+                - Delete: remoção de registros
+                    - ex:
+                        DELETE FROM nome_tabela
+                        WHERE condicao;
+                        ###############IMPORTANTE#####################################
+                        Se o where não for incluído, TODOS os registros serão apagados
+                        ##############################################################
+
+
+                - Update: atualização de registros
+                    - ex: 
+                        UPDATE nome_tabela
+                        SET coluna1 = valor1, coluna2 = valor2,...
+                        WHERE condicao;
+                        ###############IMPORTANTE########################################
+                        Se o where não for incluído, TODOS os registros serão modificados
+                        #################################################################
+
+                - Select: seleção (consulta) de registros 
+
+        - Controle (DCL)
+            - Controle de acesso e restrição dos dados
+            - Principais comandos
+                - Grant: concessão de direitos de acesso a tabelas e visões
+                - Revoke: revogação de direitos de acesso a tabelas e visões
+
+        - Especificidade do SQLite: (não do SQL)
+            -Tipos de dados
+                - Inteiro 
+                - Real
+                - BLOB 
+                    - Bytes crus
+                    - vídeo, imagem, música, etc 
+                        - não recomendado guardar esse tipo de dado, mas sim o caminho para ele
+                - Texto
+                - Null
+            - não possui tipo específico para data e hora
+                - Solução: texto
+                - Formato inglês:
+                    - AAAA/MM/DD (ano/mes/dia)
+                    - HH:MM:SS.SSS (hora:minuto:segundo e fração de segundos)
+            
+            
