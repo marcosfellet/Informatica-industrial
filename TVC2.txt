@@ -1,0 +1,122 @@
+Python
+    - interpretador
+        - Ler scripts e executar comandos
+        - Maneira indireta de rodar algoritmo
+    - Ecossistema
+    - Acesso a bibliotecas facilitado
+    - venv 
+        - ambiente isolado para o projeto
+        - todas as dependências para rodar o código 
+    - pip
+        - Gerenciador de pacotes 
+        - "PlayStore do python"
+    - for
+        - iterar sobre uma sequência
+            - l = [1,2,"ENE"]
+                - for i in l[0]:
+                    print(i)
+                NÃO RODA, pois l[0] = 1, não é uma sequência
+                - for i in l[2]:
+                    print(2)
+                RODA, pois l[2] = "ENE" = string = cadeia de caracteres
+    -  Subrotinas (funções)
+        - não tem obrigatoriedade de explicitar o retorno e o tipo dos parâmetros
+        - Passagem por atribuição
+        - ex:
+            - def foo(a)
+                a = 10
+            - def foo2(l)
+                li.append(30)
+            na main:
+                var = 20
+                foo(var)
+            # var vale 20 ao final da execução
+                l = [1,2]
+                foo2(l)
+            # l = [1,2,30] ao final da execução    
+
+- Sistemas Distribuídos
+    - Modelo OSI
+        - Camada física
+            - Bits para sinais físicos
+        - Camada de Enlace
+            - Endereçamento físico do dispositivo
+            - Códigos de checagem e controle de erros
+            - Montagem do frame de transmissão (pacote pra envio)
+            - CRC
+                - Calculo de todos os bits transmitidos => número
+                - Calculo inverso
+                - Numeros diferentes => bits invertidos
+        - Camada de rede
+            - Intercomunicação de dispositivos e nós em uma rede lógica
+            - Roteamento e endereçamento lógico
+            - Dispositivos não precisam estar no mesmo ambiente
+            - Protocolo IP
+
+        - Camada de Transporte
+            - Conexão entre dispositivos
+            - Protocolos TCP e UDP
+                - TCP - confiabilidade (maior gasto de banda)
+                - UDP - velocidade
+        - Camada de Aplicação
+            - reconhecimento facial, calculadora, MODBUS, etc
+
+    - Arquitetura de sistemas distribuídos
+        - Cliente-servidor
+            - Servidor é um elemento passivo da rede 
+              (não atua se não for provocado)
+    - API Socket
+        - primitivas
+            - Bind
+                - Informar o sis.op que deseja utilizar o IP e uma porta 
+            - Listen
+                - Recebe as conexões
+                - Cliente tenta se conectar antes do listen, sis.op nega o acesso 
+            - Acess  
+                - fornece o endpoint para a conexão 
+
+- Programação Concorrente
+    - Tarefas segmentadas para fazer todas as tarefas 
+    - OI-bound
+        - Pouco tempo de processamento e muito tempo de espera
+    - CPU-bound 
+        - Muito tempo de processamento
+        - Jogo, simulação, etc 
+    - Thread
+        - Linha de execução 
+        - Fluxo único de execução 
+        - Uma instrução vem depois da outra
+        - Multithread
+            - Desacoplamento das execuções
+            - Deve ser usado:
+                - problemas IO-bound
+            - Não deve ser usado:
+                - CPU-bound 
+            - Condição de corrida
+                - Variável compartilhada por 2 ou mais threads
+                    - Geralmente são atributos de classe compartilhados
+                    - Lock
+                    - Semáforo 
+                        - limitar recurso
+                        - caso genérico do lock
+                        - mais de uma thread pode ser executada
+
+- Sistemas Supervisórios
+    - Protocolo MODBUS 
+        - transmissão de bits ou números inteiros de 16 bits 
+        - Organizados em 
+            - Coils
+                - Normalmente liga e desliga
+            - Entradas discretas
+                - Normalmente leitura de sensores
+            - Reg de entrada 
+                - Leitura     
+            - Reg de saída
+                - Leitura e Escritia
+        - Maneira de oranizar os bits da camada de aplicação  
+    - Kivy I e II 
+    - Introdução ao sistema de banco de dados
+        - Focar no DML
+        - Pode repetir chave ESTRANGEIRA
+
+
